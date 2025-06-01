@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Writing Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        .btn {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .btn-grammar { background-color: #007bff; }
+        .btn-clarity { background-color: #17a2b8; }
+        .btn-tone { background-color: #28a745; }
+        .btn-enhance { background-color: #ffc107; color: #000; }
+
+        .response-box, .error-box {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .response-box { color: #212529; }
+        .error-box { color: red; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Writing Assistant</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.text }}
+        <br>
+        <button type="submit" name="action" value="grammar" class="btn btn-grammar">Check Grammar</button>
+        <button type="submit" name="action" value="clarity" class="btn btn-clarity">Check Clarity</button>
+        <button type="submit" name="action" value="tone" class="btn btn-tone">Check Tone</button>
+        <button type="submit" name="action" value="enhance" class="btn btn-enhance">Enhance Writing</button>
+    </form>
+
+    {% if response %}
+    <div class="response-box">
+        <h4>Response:</h4>
+        <p>{{ response }}</p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="error-box">
+        <h4>Error:</h4>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
