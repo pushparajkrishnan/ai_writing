@@ -168,3 +168,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
 
 
+print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
