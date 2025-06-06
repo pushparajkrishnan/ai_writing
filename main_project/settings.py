@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from dotenv import load_dotenv
-import dotenv
-import os
-dotenv.load_dotenv()
+load_dotenv()
+
+
 
 
 
@@ -40,7 +40,9 @@ SECRET_KEY = 'django-insecure-b$4n$g1#qv%vrq^z)6w&l%s1vwwv&o)c^-cazxrsyeg)tk8j^c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -164,3 +166,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # For Render
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+
+
