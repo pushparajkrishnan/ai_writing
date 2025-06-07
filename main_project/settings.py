@@ -41,7 +41,7 @@ SECRET_KEY = 'django-insecure-b$4n$g1#qv%vrq^z)6w&l%s1vwwv&o)c^-cazxrsyeg)tk8j^c
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1', "textuner.com", "www.textuner.com" ]
 
 
 

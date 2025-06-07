@@ -27,7 +27,7 @@ def estimate_tokens(text):
 
 def get_prompt(action, text):
     prompts = {
-        "grammar": f"Check the grammar in this text:\n{text}",
+        "grammar": f"Check the grammar error in this text:\n{text}",
         "clarity": f"Is the sentence is understandable and clarity:\n{text}",
         "tone": f"Analyze the tone of this text (formal, casual, funny, rude, etc.):\n{text}",
         "enhance": f"Enhance the quality and fluency of this writing:\n{text}",
